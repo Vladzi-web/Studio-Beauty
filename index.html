@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Beauty | Kadeřnictví</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+      body {
+          font-family: 'Inter', sans-serif;
+          background-color: #09090b;
+      }
+
+      ::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+          background: #09090b;
+      }
+      ::-webkit-scrollbar-thumb {
+          background: #27272a;
+          border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+          background: #3f3f46;
+      }
+
+      details > summary {
+          list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+          display: none;
+      }
+    </style>
+    <link rel="icon" type="image/png" href="sem-vloz-ikonu-pro-google.png" />
+    <link rel="apple-touch-icon" href="sem-vloz-ikonu-pro-google.png" />
+    <style>
+      /* Ceník overrides */
+      #cenik table { min-width: 100% !important; white-space: normal !important; }
+      #cenik th, #cenik td { padding: 0.75rem 0.5rem !important; font-size: 0.875rem !important; line-height: 1.25 !important; word-break: break-word; }
+      @media (min-width: 640px) {
+        #cenik th, #cenik td { padding: 1rem !important; font-size: 1rem !important; }
+      }
+      #cenik thead th { color: #f472b6 !important; }
+      #cenik td:first-child { font-weight: 500; color: #e4e4e7 !important; }
+      /* Služby podsvícení */
+      #sluzby details { transition: all 0.3s ease; }
+      #sluzby details:hover { border-color: rgba(168, 85, 247, 0.4); box-shadow: 0 0 30px -5px rgba(236, 72, 153, 0.3); background-color: rgba(236, 72, 153, 0.05); }
+      #sluzby details > summary:hover span.text-3xl { color: #f472b6; text-shadow: 0 0 10px rgba(236, 72, 153, 0.5); }
+      #sluzby details:hover i { color: #f472b6 !important; }
+    </style>
+  </head>
+  <body
+    class="text-zinc-400 antialiased selection:bg-zinc-800 selection:text-white"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-white/5"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="#domu"
+          class="block shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xl"
+        >
+          <!-- Vlastní logo: Srdíčko s textem -->
+          <svg
+            viewBox="0 0 160 120"
+            class="h-16 w-auto text-zinc-100 group-hover:text-white transition-all duration-300 group-hover:scale-105"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M80 110 C80 110, 10 70, 10 35 C10 10, 45 10, 80 35 C115 10, 150 10, 150 35 C150 70, 80 110, 80 110 Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="fill-white/5 backdrop-blur-sm"
+            ></path>
+            <text
+              x="80"
+              y="52"
+              text-anchor="middle"
+              fill="currentColor"
+              font-family="Inter, sans-serif"
+              font-size="18"
+              class="font-light tracking-tight"
+            >
+              Studio
+            </text>
+            <text
+              x="80"
+              y="76"
+              text-anchor="middle"
+              fill="currentColor"
+              font-family="Inter, sans-serif"
+              font-size="18"
+              class="font-light tracking-tight"
+            >
+              Beauty
+            </text>
+          </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-xl font-light">
+          <a href="#domu" class="hover:text-white transition-colors">Domů</a>
+          <a href="#sluzby" class="hover:text-white transition-colors">
+            Služby
+          </a>
+          <a href="#cenik" class="hover:text-white transition-colors">Ceník</a>
+          <a href="#o-nas" class="hover:text-white transition-colors">O nás</a>
+          <a
+            href="#kontakty"
+            class="text-white hover:text-zinc-300 transition-colors"
+          >
+            Kontakty
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="domu"
+      class="relative min-h-screen flex items-center pt-20 overflow-hidden"
+    >
+      <!-- Pozadí s uživatelskou fotkou -->
+      <div class="absolute inset-0 bg-zinc-900">
+        <img
+          src="pozadí.jpg"
+          alt="Studio Beauty pozadí"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-zinc-950/80 to-zinc-950/30"
+        ></div>
+      </div>
+
+      <div
+        class="md:py-32 w-full max-w-6xl mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 relative"
+      >
+        <div class="max-w-3xl space-y-10">
+          <div class="space-y-6">
+            <h1
+              class="md:text-8xl text-6xl font-light text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 tracking-tight"
+            >
+              Studio Beauty
+            </h1>
+            <p
+              class="text-3xl md:text-4xl text-zinc-300 font-light tracking-tight leading-relaxed"
+            >
+              <span class="text-pink-400 font-normal">střih</span>
+              ,
+              <span class="text-purple-400 font-normal">
+                prodlužování vlasů
+              </span>
+              , barvení vlasů, společenské
+              a svatební účesy (možno zajistit i make up),regenerační procedůry: ruční masáže hlavy,
+              <span class="text-red-400 font-normal">Eks Rekonstruct</span>
+              .
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row gap-6 text-xl font-light text-zinc-300"
+          >
+            <div
+              class="flex items-center gap-4 bg-white/5 px-5 py-4 rounded-2xl border border-white/10 backdrop-blur-md"
+            >
+              <i
+                data-lucide="clock"
+                class="w-6 h-6 text-zinc-400"
+                stroke-width="1.5"
+              ></i>
+              <span class="">Po-Pá 9:00-17:00</span>
+            </div>
+            <div
+              class="flex items-center gap-4 bg-white/5 px-5 py-4 rounded-2xl border border-white/10 backdrop-blur-md"
+            >
+              <i
+                data-lucide="phone-call"
+                class="w-6 h-6 text-zinc-400"
+                stroke-width="1.5"
+              ></i>
+              <span class="">Telefonická rezervace předem!</span>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <a
+              href="#kontakty"
+              class="inline-flex items-center justify-center h-14 px-10 rounded-full bg-white text-black text-xl font-light hover:bg-zinc-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+            >
+              Chci termín
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Služby Section -->
+    <section
+      id="sluzby"
+      class="py-24 md:py-32 border-t border-white/5 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-red-600/20 via-purple-600/20 to-pink-600/20 rounded-full blur-[120px] pointer-events-none"
+      ></div>
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <h2
+          class="text-5xl md:text-6xl font-light tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 mb-16"
+        >
+          Služby
+        </h2>
+
+        <div class="space-y-4">
+          <details
+            class="group bg-zinc-900/30 border border-white/5 rounded-3xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden"
+          >
+            <summary
+              class="flex items-center justify-between p-8 cursor-pointer list-none"
+            >
+              <span
+                class="text-3xl font-light text-zinc-200 tracking-tight group-hover:text-white transition-colors"
+              >
+                Střih
+              </span>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180 flex items-center justify-center w-10 h-10 rounded-full bg-white/5 group-hover:bg-white/10"
+              >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-6 h-6 text-zinc-400 group-hover:text-white"
+                  stroke-width="1.5"
+                ></i>
+              </span>
+            </summary>
+            <div
+              class="px-8 pb-8 pt-2 text-xl font-light leading-relaxed space-y-8"
+            >
+              <p>
+                Nabízíme dámské, pánské i dětské střihy podle nejnovějších
+                trendů. Každému střihu předchází konzultace, mytí a po střihu
+                následuje styling. Snažíme se vždy o to, aby účes nejen skvěle
+                vypadal, ale byl pro vás i snadno upravitelný v domácích
+                podmínkách.
+              </p>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="S5.jpeg"
+                    alt="Ukázka střihu"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="S1.jpeg"
+                    alt="Ukázka střihu"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="S2.jpeg"
+                    alt="Ukázka střihu"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="S3.jpeg"
+                    alt="Ukázka střihu"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="S4.jpeg"
+                    alt="Ukázka střihu"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details
+            class="group bg-zinc-900/30 border border-white/5 rounded-3xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden"
+          >
+            <summary
+              class="flex items-center justify-between p-8 cursor-pointer list-none"
+            >
+              <span
+                class="text-3xl font-light text-zinc-200 tracking-tight group-hover:text-white transition-colors"
+              >
+                Prodlužování a zahušťování vlasů
+              </span>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180 flex items-center justify-center w-10 h-10 rounded-full bg-white/5 group-hover:bg-white/10"
+              >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-6 h-6 text-zinc-400 group-hover:text-white"
+                  stroke-width="1.5"
+                ></i>
+              </span>
+            </summary>
+            <div
+              class="px-8 pb-8 pt-2 text-xl font-light leading-relaxed space-y-8"
+            >
+              <p>
+                Dále nabízíme prodlužování a zahušťovaní vlasů. Vlasy používáme
+                vysoké kvality Remy skládané jedním směrem. Což je důležité ,
+                vlasy se pak tolik necuchají. A provádíme dvě metody: keratinem
+                a nebo tape in (pásky) Po absolvování školení od značky Balmain
+                Paris i značky SO. CAP se prodlužování vlasů věnujeme již více
+                než 15let. Před samotnou aplikací je vždy nutná osobní
+                konzultace, kde vybere vhodnou metodu, vše vysvětlíme a
+                provedeme cenovou nabídku. Konzultace si prosím předem
+                telefonicky objednejte. Dbáme hlavně na přirozenost prodlužování
+                , aby se co nejvíce propojili s vlastními vlasy.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div
+                  class="aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="zahuštovani vlasu.jpeg"
+                    alt="Ukázka prodlužování"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="WhatsApp Image 2026-03-07 at 17.22.43.jpeg"
+                    alt="Ukázka prodlužování"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details
+            class="group bg-zinc-900/30 border border-white/5 rounded-3xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden"
+          >
+            <summary
+              class="flex items-center justify-between p-8 cursor-pointer list-none"
+            >
+              <span
+                class="text-3xl font-light text-zinc-200 tracking-tight group-hover:text-white transition-colors"
+              >
+                Regenerační procedury
+              </span>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180 flex items-center justify-center w-10 h-10 rounded-full bg-white/5 group-hover:bg-white/10"
+              >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-6 h-6 text-zinc-400 group-hover:text-white"
+                  stroke-width="1.5"
+                ></i>
+              </span>
+            </summary>
+            <div
+              class="px-8 pb-8 pt-2 text-xl font-light leading-relaxed space-y-10"
+            >
+              <!-- Detoxikační kúra -->
+              <div>
+                <h4 class="text-2xl font-medium text-pink-400 mb-4">Detoxikační kúra a léčivé procedury</h4>
+                <p>
+                  Nabízíme léčivé a regenerační procedury. Například B-Pure detoxikační kůru proti lupům, kterou je možnost si nechat aplikovat i v rámci stříhání nebo i barvení. Má blahodárný vliv například i při lupence či suchém ekzému na pokožce hlavy. (Při jiných, vážnějších dermatologických problémech je nutná nejdříve konzultace s lékařem). Kůra je ,ale přírodní a tedy velmi šetrná a její hlavní složkou je detoxikační zelený jíl. Čas aplikace je 30min k ostatním kadeřnickým službám dle výběru. Cena za aplikaci 200-400kč(dle hustoty vlasů). Někdy postačí jen jedna aplikace, jindy je lepší kůru po čase opakovat. To je individuální ,dle rozsahu problému na pokožce hlavy klientů.
+                </p>
+              </div>
+
+              <!-- EKS REKONSTRUCT -->
+              <div>
+                <h4 class="text-2xl font-medium text-purple-400 mb-4">EKS REKONSTRUCT</h4>
+                <div class="space-y-6">
+                  <p>
+                    Účinná profesionální služba na bázi mořského keratinu a kolagenu, s použitím inovační technologie. Navraťte namáhaným vlasům půvab a krásu a dopřejte jim rekonstrukční keratinovou kůru.
+                  </p>
+                  <p>
+                    Keratin je do vlasů ručně vpracováván a díky tomu jsou pak silnější a přestávají se lámat. Po aplikaci ve vlasech vydrží 5 až 8týdnů. Vlasům, které jsou slabé a ulamují se konečky nebo se zacuchávají, kůra výborně prospívá. Kůru lze opakovat každý měsíc, dokud se vlasy zcela neuzdraví. Doporučuji alespoň tři návštěvy při velkém poškození. Nebo jednu návštěvu jako prevenci poškození. A dále jen udržovací kůry dle potřeby jednou za čas.
+                  </p>
+                  <p>
+                    Vlasová rekonstrukce dodá vlasům zpět zdraví, hebkost, lesk a především sílu. Tento postup je nechemický, vlasy nerovná jen ozdravuje, proto je vhodný i na kudrnaté vlasy.
+                  </p>
+                  <ul
+                    class="list-disc list-inside text-zinc-300 mt-6 space-y-2 bg-white/5 p-6 rounded-2xl border border-white/5"
+                  >
+                    <li>Délka ošetření: 1h- 1,5 h i s konečnou úpravou zastřižení konců zdarma.</li>
+                    <li>Cena a čas závisí na délce a hustotě vlasů. (Např. dlouhé, husté vlasy 2000kč)</li>
+                    <li>Dále je dobré používat profesionální přípravky z řady EKS Revlon na udržení kvality vlasů pro klientky na doma.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Ruční masáže hlavy -->
+              <div>
+                <h4 class="text-2xl font-medium text-red-400 mb-4">Ruční masáže hlavy</h4>
+                <p>
+                  Nabízíme ruční masáže hlavy, i jemné masáže hlavy ergonomickým kartáčem se silikonovými hroty. Který zajišťuje hlubší čištění a prokrvení pokožky . V nabídce je masáž jak samostatně tak i s aplikací Echosline Energy Lotion - posilujícího séra . To obsahuje přírodní výtažky z kopřivy a rozmarýnu, které stimulují mikrocirkulaci pokožky hlavy, posilují vlasové cibulky a podporují zdravý růst vlasů. Díky ricinovému oleji a sójovým proteinům pomáhá obnovit vitalitu a pevnost vlasů. Vyživené a posílené vlasy jsou silnější, pevnější a odolnější proti předčasnému vypadávání.
+                </p>
+              </div>
+
+              <!-- Sloučená galerie pro procedury -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+                <div
+                  class="aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="eks.jpeg"
+                    alt="Ukázka procedury"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="lecive procedury 2.jpeg"
+                    alt="Ukázka procedury"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                <img
+                src="masaze hlavy.jpeg"
+                alt="Ukázka EKS"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>   
+            </div>
+          </details>
+
+          <details
+            class="group bg-zinc-900/30 border border-white/5 rounded-3xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden"
+          >
+            <summary
+              class="flex items-center justify-between p-8 cursor-pointer list-none"
+            >
+              <span
+                class="text-3xl font-light text-zinc-200 tracking-tight group-hover:text-white transition-colors"
+              >
+                Barvení vlasů
+              </span>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180 flex items-center justify-center w-10 h-10 rounded-full bg-white/5 group-hover:bg-white/10"
+              >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-6 h-6 text-zinc-400 group-hover:text-white"
+                  stroke-width="1.5"
+                ></i>
+              </span>
+            </summary>
+            <div class="px-8 pb-8 pt-2">
+              <div
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-2"
+              >
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B1.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B2.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B3.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B4.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B5.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B6.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B7.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B8.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B9.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B10.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B11.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="B12.jpeg"
+                    alt="Barvení"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details
+            class="group bg-zinc-900/30 border border-white/5 rounded-3xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden"
+          >
+            <summary
+              class="flex items-center justify-between p-8 cursor-pointer list-none"
+            >
+              <span
+                class="text-3xl font-light text-zinc-200 tracking-tight group-hover:text-white transition-colors"
+              >
+                Svatební účesy
+              </span>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180 flex items-center justify-center w-10 h-10 rounded-full bg-white/5 group-hover:bg-white/10"
+              >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-6 h-6 text-zinc-400 group-hover:text-white"
+                  stroke-width="1.5"
+                ></i>
+              </span>
+            </summary>
+            <div
+              class="px-8 pb-8 pt-2 text-xl font-light leading-relaxed space-y-8"
+            >
+              <p>
+                Zajistíme pro vás dokonalý účes pro váš velký den.
+                Specializujeme se na společenské a svatební účesy, včetně
+                možnosti zajistit i profesionální make-up. Ke každé nevěstě
+                přistupujeme individuálně, účes navrhneme tak, aby ladil k šatům
+                i vaší osobnosti, a vždy doporučujeme zkoušku účesu s
+                dostatečným předstihem.
+              </p>
+              <div class="grid grid-cols-2 gap-4 mt-4">
+                <div
+                  class="aspect-square sm:aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="WhatsApp Image 2026-03-07 at 17.06.49.jpeg"
+                    alt="Svatební účes"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square sm:aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="WhatsApp Image 2026-03-07 at 17.06.49 (1).jpeg"
+                    alt="Svatební účes"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square sm:aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="WhatsApp Image 2026-03-07 at 17.06.48.jpeg"
+                    alt="Svatební účes"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  class="aspect-square sm:aspect-[4/3] rounded-2xl bg-zinc-900 border border-white/5 overflow-hidden"
+                >
+                  <img
+                    src="WhatsApp Image 2026-03-07 at 17.09.57.jpeg"
+                    alt="Svatební účes"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ceník Section -->
+    <section id="cenik" class="py-24 md:py-32 border-t border-white/5">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-5xl md:text-6xl font-light tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 mb-16"
+        >
+          Ceník služeb
+        </h2>
+
+        <div
+          class="rounded-3xl border border-white/5 bg-zinc-900/30 overflow-hidden"
+        >
+          <div class="overflow-x-auto pb-4">
+            <table
+              class="w-full text-left border-collapse whitespace-nowrap min-w-[900px]"
+            >
+              <thead class="bg-white/5 text-zinc-300 text-lg font-light">
+                <tr>
+                  <th class="p-6 border-b border-white/10 w-1/3">Služba</th>
+                  <th
+                    class="p-6 border-b border-white/10 uppercase tracking-wider text-zinc-500 text-base"
+                  >
+                Odrosty
+                  </th>
+                  <th
+                    class="p-6 border-b border-white/10 uppercase tracking-wider text-zinc-500 text-base"
+                  >
+                    Krátké vlasy
+                  </th>
+                  <th
+                    class="p-6 border-b border-white/10 uppercase tracking-wider text-zinc-500 text-base"
+                  >
+                    Středně dlouhé v.
+                  </th>
+                  <th
+                    class="p-6 border-b border-white/10 uppercase tracking-wider text-zinc-500 text-base"
+                  >
+                    Dlouhé vlasy
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                class="text-xl font-light text-zinc-400 divide-y divide-white/5"
+              >
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Foukaná (styling)</td>
+                  <td class="p-6">-</td>
+                  <td class="p-6">250 Kč</td>
+                  <td class="p-6">300 Kč</td>
+                  <td class="p-6">350 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">
+                    Dámský střih (mytí, styling)
+                  </td>
+                  <td class="p-6">-</td>
+                  <td class="p-6">400 Kč</td>
+                  <td class="p-6">500 Kč</td>
+                  <td class="p-6">600 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Barvení</td>
+                  <td class="p-6">450 Kč</td>
+                  <td class="p-6">500 Kč</td>
+                  <td class="p-6">600 Kč</td>
+                  <td class="p-6">700 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Ombré, Balayage</td>
+                  <td class="p-6">-</td>
+                  <td class="p-6">400 Kč</td>
+                  <td class="p-6">500 Kč</td>
+                  <td class="p-6">600 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Melír k barvení</td>
+                  <td class="p-6">-</td>
+                  <td class="p-6">250 Kč</td>
+                  <td class="p-6">350 Kč</td>
+                  <td class="p-6">450 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">
+                    Melír
+                    <span class="text-lg text-zinc-500">
+                      (+ 150 Kč za každou odměrku blondoranu)
+                    </span>
+                  </td>
+                  <td class="p-6">-</td>
+                  <td class="p-6">400 Kč</td>
+                  <td class="p-6">500 Kč</td>
+                  <td class="p-6">600 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">
+                    Trvalá (vlnitá, narovnávací)
+                  </td>
+                  <td class="p-6">-</td>
+                  <td class="p-6">1100 Kč</td>
+                  <td class="p-6">1300 Kč</td>
+                  <td class="p-6">1800 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200 whitespace-normal min-w-[350px]">
+                    Ozdravení vlasů keratinem
+                    <span class="text-lg text-zinc-500 block mt-1">
+                      (zdravotní zastřižení konečků, foukaná)
+                    </span>
+                  </td>
+                  <td class="p-6">-</td>
+                  <td class="p-6">600 Kč</td>
+                  <td class="p-6">1000 Kč</td>
+                  <td class="p-6">1500 Kč</td>
+                </tr>
+                <tr
+                  class="hover:bg-white/[0.02] transition-colors bg-white/[0.01]"
+                >
+                  <td class="p-6 text-zinc-200">
+                    Přeliv po barvení, melírování
+                  </td>
+                  <td class="p-6" colspan="4">150 - 600 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">
+                    Společ. účes (plesový, svatební)
+                  </td>
+                  <td class="p-6" colspan="4">1000 - 2200 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">
+                    Společ. účes jednoduchý (vlny)
+                  </td>
+                  <td class="p-6" colspan="4">200 - 1000 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Masáž hlavy (cca 10 minut)</td>
+                  <td class="p-6" colspan="4">200 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">
+                    K1-Power protector (ochrana do barvy)
+                  </td>
+                  <td class="p-6" colspan="4">100 - 400 Kč</td>
+                </tr>
+                <tr
+                  class="hover:bg-white/[0.02] transition-colors bg-white/[0.01]"
+                >
+                  <td class="p-6 text-zinc-200">Pánský střih</td>
+                  <td class="p-6">240 Kč</td>
+                  <td class="p-6 text-zinc-500" colspan="3">
+                    + 100 Kč změna velká
+                  </td>
+                </tr>
+                <tr
+                  class="hover:bg-white/[0.02] transition-colors bg-white/[0.01]"
+                >
+                  <td class="p-6 text-zinc-200">Pánský střih (mytí)</td>
+                  <td class="p-6">290 Kč</td>
+                  <td class="p-6 text-zinc-500" colspan="3">
+                    + 100 Kč změna velká
+                  </td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Pánský střih (strojkem)</td>
+                  <td class="p-6" colspan="4">190 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Úprava vousů</td>
+                  <td class="p-6" colspan="4">100 - 200 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Dětský střih</td>
+                  <td class="p-6" colspan="4">200 - 250 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">
+                    Detoxikační kúra na pokožku hlavy
+                  </td>
+                  <td class="p-6" colspan="4">200 - 500 Kč</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200 whitespace-normal">
+                    Oprava nevydařeného barvení
+                    <span class="text-lg text-zinc-500 block mt-1">
+                      (domácí, nebo z jiného salonu)
+                    </span>
+                  </td>
+                  <td class="p-6" colspan="4">+ 1000 - 1500 Kč k běžné ceně</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-zinc-200">Prodlužování vlasů</td>
+                  <td class="p-6" colspan="4">Cena dle individuální domluvy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O nás Section -->
+    <section
+      id="o-nas"
+      class="py-24 md:py-32 border-t border-white/5 bg-zinc-950/50"
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-5xl md:text-6xl font-light tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 mb-20"
+        >
+          O nás
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-20 md:gap-16 mb-20">
+          <!-- Profil 1 -->
+          <div class="space-y-8">
+            <div
+              class="aspect-[4/5] sm:aspect-square rounded-3xl bg-zinc-900 border border-white/5 overflow-hidden"
+            >
+              <img
+                src="WhatsApp Image 2026-04-04 at 22.20.18.jpeg"
+                alt="Vlaďka"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-4xl font-light text-pink-400 tracking-tight mb-6">
+                Vlaďka
+              </h3>
+              <div class="space-y-6 text-xl font-light leading-relaxed">
+                <p>
+                  Jmenuji se Vlaďka a kadeřnictví je moje volba už od dětství. V
+                  první třídě jsem říkala, že budu mít jednou svůj vlastní salon
+                  a budu stříhat lidem vlásky. A tak se taky stalo. A od té doby
+                  je to moje velká vášeň, která mě stále baví na plno i po
+                  20lech v oboru. Mám ráda tvůrčí činost a práci s lidmi, takže
+                  mě kadeřnictví naplňuje a neměnila bych.
+                </p>
+                <p>
+                  Věnuji se i prodlužování vlasů a to více jak 15let. Baví mě
+                  moc proměny . Každý rok se pravidelně školím v oboru a sleduji
+                  novinky v materiálech a trendech. Mám zkušenosti v rámci školy
+                  i na českých a mezinárodních soutěžích a také později, při
+                  česání tanečnic v kabatetu. Takže řadím mezi své kvality i
+                  rychlost provedené práce, vždy ale precizně. A za svojí
+                  kadeřnickou kariéru mám odčesáno stovky svateb a plesů.
+                </p>
+                <p>
+                  Provádím v salonu mimo moderní barvící techniky a střihy
+                  například i trvalou ondulaci, která se poslední léta naopak
+                  velmi vrací do mody. A dále mě moc baví věnovat se regeneraci
+                  vlasů.Absolvovala jsem tedy nejrůznější kurzy právě na
+                  zdravotní vlasové kůry.
+                </p>
+                <p class="text-zinc-300 italic pt-4">
+                  Řídím se v práci heslem: Pracuji s vlasy, jako s vaší korunou
+                  krásy. A na mé práci mě moc baví potkávat lidi a naslouchat
+                  jim. Momentálně už, ale moc nemám kapacity přijímat nové
+                  klienty, kvůli vytíženosti.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profil 2 -->
+          <div class="space-y-8">
+            <div
+              class="aspect-[4/5] sm:aspect-square rounded-3xl bg-zinc-900 border border-white/5 overflow-hidden"
+            >
+              <img
+                src="WhatsApp Image 2026-03-19 at 08.06.22.jpeg"
+                alt="Kamila"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3
+                class="text-4xl font-light text-purple-400 tracking-tight mb-6"
+              >
+                Kamila
+              </h3>
+              <div class="space-y-6 text-xl font-light leading-relaxed">
+                <p>
+                  Jmenuji se Kamila a kadeřnictví je moje velká radost už více
+                  než 20 let. Na své práci mám nejraději nejen proměny vlasů,
+                  ale také setkávání s lidmi a příjemnou atmosféru, která u nás
+                  vzniká. Těší mě, když se ke mne klienti rádi vracejí,
+                  odcházejí spokojení a cítí se u mě dobře. Vaše důvěra je pro
+                  mě vždy tou největší odměnou.
+                </p>
+                <p>
+                  Kromě práce v salonu působím také v Jihočeském divadle jako
+                  vlasenkářka, kde češu a líčím herce na divadelní představení.
+                  Zkušenosti mám i s líčením pro profesionální fotografy, i když
+                  se tomu dnes už z časových důvodů věnuji méně.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Naše značky -->
+        <div
+          class="p-10 rounded-3xl bg-zinc-900/30 border border-white/5 flex items-start sm:items-center gap-8 flex-col sm:flex-row mb-8"
+        >
+          <div
+            class="w-16 h-16 shrink-0 rounded-full bg-white/5 flex items-center justify-center"
+          >
+            <i
+              data-lucide="leaf"
+              class="w-8 h-8 text-white"
+              stroke-width="1.5"
+            ></i>
+          </div>
+          <div>
+            <h4 class="text-2xl font-light text-white mb-3 tracking-tight">
+              Naše značky
+            </h4>
+            <p class="text-xl font-light leading-relaxed">
+              V salonu spolupracujeme převážně s firmou
+              <span class="text-white">primavera andorrana</span>
+              a používáme konkrétně jejich značky
+              <span class="text-white">Echosline the vegan way</span>
+              ,
+              <span class="text-white">REVLON professional</span>
+              ,
+              <span class="text-white">Nook eco inspired product</span>
+              .
+            </p>
+          </div>
+        </div>
+
+        <!-- Dárkové poukázky -->
+        <div
+          class="p-10 rounded-3xl bg-gradient-to-br from-zinc-900/50 to-zinc-900/20 border border-white/5 flex items-start sm:items-center gap-8 flex-col sm:flex-row"
+        >
+          <div
+            class="w-16 h-16 shrink-0 rounded-full bg-white/5 flex items-center justify-center"
+          >
+            <i
+              data-lucide="gift"
+              class="w-8 h-8 text-white"
+              stroke-width="1.5"
+            ></i>
+          </div>
+          <div>
+            <h4 class="text-2xl font-light text-white mb-2 tracking-tight">
+              Dárkové poukázky
+            </h4>
+            <p class="text-xl font-light">
+              Možnost zakoupení dárkových poukázek osobně v salonu. Po předchozí
+              telefonické domluvě. V hodnotě dle vašeho přání.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakty Section -->
+    <section id="kontakty" class="py-24 md:py-32 border-t border-white/5">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-5xl md:text-6xl font-light tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 mb-16"
+        >
+          Kontakty
+        </h2>
+
+        <div class="grid sm:grid-cols-2 gap-8 max-w-5xl">
+          <!-- Kontakt 1 -->
+          <div
+            class="p-10 rounded-3xl bg-zinc-900/30 border border-white/5 flex flex-col h-full hover:bg-zinc-900/50 transition-colors"
+          >
+            <p
+              class="text-lg text-zinc-500 uppercase tracking-widest font-light mb-4"
+            >
+              Odpovědný vedoucí studia
+            </p>
+            <h3 class="text-4xl font-light text-white tracking-tight mb-10">
+              Vladimíra Hrdličková
+            </h3>
+
+            <div class="mt-auto">
+              <a
+                href="tel:733578386"
+                class="inline-flex items-center gap-4 text-xl font-light text-zinc-300 hover:text-white transition-colors group"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors"
+                >
+                  <i data-lucide="phone" class="w-6 h-6" stroke-width="1.5"></i>
+                </div>
+                <span>733 578 386</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kontakt 2 -->
+          <div
+            class="p-10 rounded-3xl bg-zinc-900/30 border border-white/5 flex flex-col h-full hover:bg-zinc-900/50 transition-colors"
+          >
+            <p
+              class="text-lg text-zinc-500 uppercase tracking-widest font-light mb-4"
+            >
+              Kolegyně
+            </p>
+            <h3 class="text-4xl font-light text-white tracking-tight mb-10">
+              Kamila Matoušek
+            </h3>
+
+            <div class="mt-auto">
+              <a
+                href="tel:+420607637744"
+                class="inline-flex items-center gap-4 text-xl font-light text-zinc-300 hover:text-white transition-colors group"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors"
+                >
+                  <i data-lucide="phone" class="w-6 h-6" stroke-width="1.5"></i>
+                </div>
+                <span>+420 607 637 744</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Odkazy: Mapy & Facebook -->
+          <div class="sm:col-span-2 grid sm:grid-cols-2 gap-8 mt-4">
+            <a
+              href="https://www.google.com/maps/dir/?api=1&amp;destination=Na+Sadech+5/6,+České+Budějovice+Czech+Republic"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-8 rounded-3xl bg-zinc-900 border border-white/5 flex items-center gap-6 hover:border-white/20 transition-all group overflow-hidden relative"
+            >
+              <div
+                class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBNMzkuNSAwdi00MCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=')] opacity-50"
+              ></div>
+              <div
+                class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shrink-0 relative z-10 group-hover:scale-105 transition-transform"
+              >
+                <i
+                  data-lucide="navigation"
+                  class="w-6 h-6 fill-current"
+                  stroke-width="1.5"
+                ></i>
+              </div>
+              <div class="relative z-10">
+                <h4 class="text-2xl font-light text-white tracking-tight">
+                  Na Sadech 5/6, Č. Budějovice
+                </h4>
+                <p
+                  class="text-xl font-light text-zinc-400 flex items-center gap-2 mt-1"
+                >
+                  Spustit navigaci v mapách
+                  <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.facebook.com/p/Studio-Beauty-100054566253912/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-8 rounded-3xl bg-zinc-900 border border-white/5 flex items-center gap-6 hover:border-[#1877F2]/50 hover:bg-[#1877F2]/5 transition-all group"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-[#1877F2]/10 text-[#1877F2] flex items-center justify-center shrink-0 group-hover:bg-[#1877F2] group-hover:text-white transition-colors"
+              >
+                <i
+                  data-lucide="facebook"
+                  class="w-7 h-7 fill-current"
+                  stroke-width="1.5"
+                ></i>
+              </div>
+              <div>
+                <h4
+                  class="text-2xl font-light text-white tracking-tight group-hover:text-[#1877F2] transition-colors"
+                >
+                  Studio Beauty
+                </h4>
+                <p
+                  class="text-xl font-light text-zinc-400 flex items-center gap-2 mt-1"
+                >
+                  Sledujte nás na Facebooku
+                  <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/5 text-center">
+      <p class="text-lg font-light text-zinc-600">
+        © 2024 Studio Beauty. Všechna práva vyhrazena.
+      </p>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+
+    <script>
+      (function() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('opacity-100', 'translate-y-0');
+              entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(sec => {
+          sec.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+          observer.observe(sec);
+        });
+      })();
+    </script>
+  </body>
+</html>
